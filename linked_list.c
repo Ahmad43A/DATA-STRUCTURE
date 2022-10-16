@@ -9,32 +9,32 @@ typedef struct node
 
 } node;
 
-int main()   
+int main()
 {
-   
+
     // list of SIZE
     node *list = NULL;
 
-    // amaking a node 'n' for adding number to list
+    // making a node 'n' for adding number to list
     node *n = malloc(sizeof(node));
 
     // a check to see if pointer null or not
     if (n == NULL)
-    {   
+    {
         return 1;
     }
 
     n->number = 1;
     n->next = NULL;
 
-    //point to new node
+    // point to new node
     list = n;
 
     // adding number to list
     n = malloc(sizeof(node));
 
     if (n == NULL)
-    {   
+    {
         free(list);
         return 1;
     }
@@ -42,14 +42,14 @@ int main()
     n->number = 2;
     n->next = NULL;
 
-    //point to next of new node
-    list -> next = n;
+    // point to next of new node
+    list->next = n;
 
-    //adding number to list
-    n= malloc(sizeof(node));
+    // adding number to list
+    n = malloc(sizeof(node));
 
     if (n == NULL)
-    {   
+    {
         free(list->next);
         free(list);
         return 1;
@@ -58,10 +58,10 @@ int main()
     n->number = 6;
     n->next = NULL;
 
-    //point to next of next of new node
+    // point to next of next of new node
     list->next->next = n;
 
-     // printing values
+    // printing values
     printf("values are :\n");
     for (node *temp = list; temp != NULL; temp = temp->next)
     {
@@ -75,7 +75,6 @@ int main()
         free(list);
         list = tmp;
         printf("list has been freed\n");
-
     }
 
     return 0;
